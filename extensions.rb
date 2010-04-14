@@ -32,6 +32,12 @@ class Integer
     }
   end
 
+  def factorial
+    raise if self < 0
+    return self if self <= 2
+    (2..self).inject(1){ |fac, i| fac * i }
+  end
+
 end
 
 class Array
