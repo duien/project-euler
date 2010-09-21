@@ -34,6 +34,7 @@ class Integer
 
   def factorial
     raise if self < 0
+    return 1 if self == 0
     return self if self <= 2
     (2..self).inject(1){ |fac, i| fac * i }
   end

@@ -15,6 +15,9 @@ def sum_of_factorials(n)
   n.to_s.split('').inject(0){ |sum, digit| sum + @factorials[digit.to_i] }
 end
 
-3.upto(100_000_000) do |i|
-  puts i if i == sum_of_factorials(i)
+curious = []
+3.upto(1_000_000) do |i|
+  curious << i if i == sum_of_factorials(i)
 end
+
+puts curious.inject(&:+)
